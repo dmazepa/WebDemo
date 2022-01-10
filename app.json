@@ -1,0 +1,10 @@
+{
+  "environments": {
+    "test": {
+      "scripts": {
+        "install": "pip install robotframework",
+        "test": "robot login_tests/valid_login.robot"
+      }
+    }
+  }
+}
