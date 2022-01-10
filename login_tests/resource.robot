@@ -18,10 +18,10 @@ ${ERROR URL}      http://${SERVER}/error.html
 
 *** Keywords ***
 Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
-    Maximize Browser Window
-    Set Selenium Speed    ${DELAY}
-    Login Page Should Be Open
+    #Open Browser    ${LOGIN URL}    ${BROWSER}
+    #Maximize Browser Window
+    #Set Selenium Speed    ${DELAY}
+    #Login Page Should Be Open
 
 Login Page Should Be Open
     Title Should Be    Login Page
