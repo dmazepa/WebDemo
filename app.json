@@ -3,7 +3,8 @@
     "test": {
       "scripts": {
         "install": "pip install robotframework",
-        "test": "robot login_tests/valid_login.robot"
+        "test": "python, foo.py"
+        //"test": "robot login_tests/valid_login.robot"
       }
     }
   }
