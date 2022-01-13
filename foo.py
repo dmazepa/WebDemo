@@ -7,7 +7,9 @@ from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 import os
-os.chmod('./chromedriver', 0755)
+os.chmod('./chromedriver', 0o755)
+path = os.getenv('PATH');
+print(path);
 ser = Service('./chromedriver')
 op = webdriver.ChromeOptions()
 op.add_argument("window-size=1920x1480")
