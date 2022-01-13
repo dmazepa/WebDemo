@@ -5,3 +5,4 @@ docutils >= 0.14
 robotframework >= 3.1.1
 robotframework-seleniumlibrary >= 3.3.1
 webdriver-manager >= 3.5.2
+selenium~=4.1.0
