@@ -7,10 +7,13 @@ from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 
+ser = Service(ChromeDriverManager().install())
+op = webdriver.ChromeOptions()
+op.add_argument("window-size=1920x1480")
+op.add_argument("disable-dev-shm-usage")
+op.add_argument("headless")
+driver = webdriver.Chrome(service=ser, options=op)
 
-s=Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=s)
-driver = webdriver.Chrome()
 driver.get("http://www.python.org")
 assert "Python" in driver.title
 elem = driver.find_element(By.NAME, "q")
