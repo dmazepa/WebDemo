@@ -8,13 +8,13 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 import chromedriver_binary
 import os
-os.chmod('./chromedriver', 0o755)
-path = os.getenv('PATH');
-print(path);
-ser = Service('./chromedriver')
+# os.chmod('./chromedriver', 0o755)
+# path = os.getenv('PATH');
+# print(path);
+# ser = Service('./chromedriver')
 op = webdriver.ChromeOptions()
 op.add_argument('--headless')
-driver = webdriver.Chrome(service=ser, options=op)
+driver = webdriver.Chrome(options=op)
 
 driver.get("http://www.python.org")
 assert "Python" in driver.title
