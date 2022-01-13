@@ -1,28 +1,19 @@
-# foo.py
-import time
-
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
-import chromedriver_binary
 import os
 
-CHROMEDRIVER_PATH = "./chromedriver"
+from selenium.webdriver.common.by import By
 
-os.chmod('./chromedriver', 0o755)
-path = os.getenv('PATH');
-print(path);
 ser = Service('./chromedriver')
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
+driver = webdriver.Chrome(service=ser, options=chrome_options)
 
-options = webdriver.ChromeOptions()
-options.add_argument("--disable-gpu")
-options.add_argument("--no-sandbox")
-options.add_argument('headless')
-options.add_argument('window-size=1200x600')
-driver = webdriver.Chrome(service=ser, options=options)
 
 driver.get("http://www.python.org")
 assert "Python" in driver.title
