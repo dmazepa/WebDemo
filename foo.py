@@ -12,12 +12,7 @@ path = os.getenv('PATH');
 print(path);
 ser = Service('./chromedriver')
 op = webdriver.ChromeOptions()
-op.add_argument("window-size=1920x1480")
-op.add_argument("disable-dev-shm-usage")
-op.add_argument("headless")
 op.add_argument('--headless')
-op.add_argument('--no-sandbox')
-op.add_argument('--disable-dev-shm-usage')
 driver = webdriver.Chrome(service=ser, options=op)
 
 driver.get("http://www.python.org")
