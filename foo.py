@@ -16,7 +16,7 @@ path = os.getenv('PATH');
 print(path);
 ser = Service('./chromedriver')
 
-chrome_bin = os.environ.get('GOOGLE_CHROME_BIN', "chromedriver")
+chrome_bin = "/app/.heroku/python/lib/python3.9/site-packages/chromedriver_binary"
 print(chrome_bin);
 
 options = webdriver.ChromeOptions()
