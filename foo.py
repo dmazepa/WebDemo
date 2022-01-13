@@ -8,13 +8,25 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 import chromedriver_binary
 import os
-# os.chmod('./chromedriver', 0o755)
-# path = os.getenv('PATH');
-# print(path);
-# ser = Service('./chromedriver')
-op = webdriver.ChromeOptions()
-op.add_argument('--headless')
-driver = webdriver.Chrome(options=op)
+
+CHROMEDRIVER_PATH = "./chromedriver"
+
+os.chmod('./chromedriver', 0o755)
+path = os.getenv('PATH');
+print(path);
+ser = Service('./chromedriver')
+
+chrome_bin = os.environ.get('GOOGLE_CHROME_BIN', "chromedriver")
+
+
+options = webdriver.ChromeOptions()
+options.binary_location = chrome_bin
+
+options.add_argument("--disable-gpu")
+options.add_argument("--no-sandbox")
+options.add_argument('headless')
+options.add_argument('window-size=1200x600')
+driver = webdriver.Chrome(service=ser, options=options)
 
 driver.get("http://www.python.org")
 assert "Python" in driver.title
