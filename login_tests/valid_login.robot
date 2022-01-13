@@ -7,7 +7,7 @@ Resource          resource.robot
 
 *** Test Cases ***
 Valid Login
-    Create Webdriver  Chrome    executable_path=./chromedriver
+    Create Webdriver  Chrome    executable_path=chromedriver/bin/chromedriver
     Go To    http://cnn.com
     Open Browser To Login Page
     #Input Username    demo
