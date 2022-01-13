@@ -5,7 +5,8 @@ import os
 
 from selenium.webdriver.common.by import By
 
-ser = Service('./chromedriver')
+binary = os.environ.get("CHROMEDRIVER_PATH")
+ser = Service(binary)
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
