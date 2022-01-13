@@ -15,7 +15,7 @@ op.add_argument("headless")
 op.add_argument('--headless')
 op.add_argument('--no-sandbox')
 op.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Chrome(service=ser, options=op)
+driver = webdriver.Chrome('chromedriver', service=ser, options=op)
 
 driver.get("http://www.python.org")
 assert "Python" in driver.title
