@@ -16,12 +16,8 @@ path = os.getenv('PATH');
 print(path);
 ser = Service('./chromedriver')
 
-chrome_bin = "/app/.heroku/python/lib/python3.9/site-packages/chromedriver_binary"
-print(chrome_bin);
 
 options = webdriver.ChromeOptions()
-options.binary_location = chrome_bin
-
 options.add_argument("--disable-gpu")
 options.add_argument("--no-sandbox")
 options.add_argument('headless')
