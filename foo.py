@@ -18,13 +18,6 @@ op.add_argument('--disable-dev-shm-usage')
 driver = webdriver.Chrome('chromedriver', service=ser, options=op)
 
 
-
-s=Service('C:/Users/Morteza/Documents/Dev/chromedriver.exe')
-browser = webdriver.Chrome(service=s)
-url='https://www.google.com'
-browser.get(url)
-
-
 driver.get("http://www.python.org")
 assert "Python" in driver.title
 elem = driver.find_element(By.NAME, "q")
