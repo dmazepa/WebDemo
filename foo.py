@@ -17,7 +17,7 @@ print(path);
 ser = Service('./chromedriver')
 
 chrome_bin = os.environ.get('GOOGLE_CHROME_BIN', "chromedriver")
-
+print(chrome_bin);
 
 options = webdriver.ChromeOptions()
 options.binary_location = chrome_bin
