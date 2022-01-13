@@ -15,8 +15,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 # gDriver.save_screenshot("my_screenshot.png")
 # gDriver.close()
 
-
-driver = webdriver.Chrome()
+caps = webdriver.DesiredCapabilities.CHROME.copy()
+caps['executable_path'] = ChromeDriverManager().install()
+driver = webdriver.Chrome(desired_capabilities=caps)
+#driver = webdriver.Chrome()
 driver.get("http://www.python.org")
 assert "Python" in driver.title
 elem = driver.find_element(By.NAME, "q")
