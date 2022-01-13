@@ -5,20 +5,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 
-# gChromeOptions = webdriver.ChromeOptions()
-# gChromeOptions.add_argument("window-size=1920x1480")
-# gChromeOptions.add_argument("disable-dev-shm-usage")
-# gDriver = webdriver.Chrome()
-# gDriver.get("https://www.python.org/")
-# time.sleep(3)
-# gDriver.save_screenshot("my_screenshot.png")
-# gDriver.close()
 
-caps = webdriver.DesiredCapabilities.CHROME.copy()
-caps['executable_path'] = ChromeDriverManager().install()
-driver = webdriver.Chrome(desired_capabilities=caps)
-#driver = webdriver.Chrome()
+s=Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=s)
+driver = webdriver.Chrome()
 driver.get("http://www.python.org")
 assert "Python" in driver.title
 elem = driver.find_element(By.NAME, "q")
