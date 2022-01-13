@@ -18,6 +18,7 @@ ${ERROR URL}      http://${SERVER}/error.html
 
 *** Keywords ***
 Open Browser To Login Page
+    Create Webdriver    Chrome    executable_path=.chromedriver/bin/chromedriver
     Open Browser    ${LOGIN URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
